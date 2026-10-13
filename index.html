@@ -106,7 +106,7 @@ h1,h2,h3{text-wrap:balance}
 .btn-lg{min-height:54px;padding:0 26px;font-size:1.05rem}
 .btn-sm{min-height:40px;padding:0 16px;font-size:.95rem}
 .btn-block{width:100%}
-.link-btn{background:none;border:0;padding:6px 0;font:600 .95rem/1.3 var(--f-body);color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;cursor:pointer}
+.link-btn{display:inline-flex;align-items:center;min-height:44px;background:none;border:0;padding:6px 0;font:600 .95rem/1.3 var(--f-body);color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;cursor:pointer}
 .link-btn:hover{text-decoration-color:var(--ink)}
 
 /* Плашка демо */
@@ -434,7 +434,7 @@ h1,h2,h3{text-wrap:balance}
 .contact-list dd{margin:0;font-weight:500}
 .contact-list dd small{display:block;font-weight:400;color:var(--muted);font-size:.9rem}
 .copy-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px}
-.copy-btn{background:none;border:0;padding:2px 0;font:500 .82rem var(--f-body);color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.copy-btn{min-height:40px;background:none;border:0;padding:8px 4px;font:500 .82rem var(--f-body);color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .copy-btn:hover{color:var(--ink)}
 .map{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--map-bg)}
 .map svg{display:block;width:100%;height:auto}
@@ -448,8 +448,8 @@ h1,h2,h3{text-wrap:balance}
 .site-footer .logo{--logo-hole:var(--bar-bg);color:var(--bar-ink)}
 .site-footer .logo__text small{color:var(--bar-ink);opacity:.7}
 .footer__text{margin:14px 0 0;max-width:58ch;font-size:.9rem;line-height:1.55;opacity:.85}
-.footer__nav{display:grid;grid-template-columns:repeat(2,auto);gap:8px 32px}
-.footer__nav a{font-size:.92rem;text-decoration:none;opacity:.9}
+.footer__nav{display:grid;grid-template-columns:repeat(2,auto);gap:0 32px}
+.footer__nav a{display:inline-flex;align-items:center;min-height:40px;font-size:.92rem;text-decoration:none;opacity:.9}
 .footer__nav a:hover{text-decoration:underline;opacity:1}
 
 /* Липка кнопка на телефоні */
@@ -1552,7 +1552,7 @@ h1,h2,h3{text-wrap:balance}
       entries.forEach(en => seen.set(en.target, en.isIntersecting));
       mobileCta.classList.toggle('is-visible', ![...seen.values()].some(Boolean));
     });
-    [$('.hero'), formSection].forEach(el => io.observe(el));
+    [$('.hero'), formSection, $('.phone')].forEach(el => io.observe(el));
   }
 })();
 </script>
